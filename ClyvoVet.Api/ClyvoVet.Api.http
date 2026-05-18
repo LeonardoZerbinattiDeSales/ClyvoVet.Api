@@ -1,0 +1,10 @@
+POST http://localhost:5078/api/pet
+Content-Type: application/json
+
+{
+  "nome": "Thor",
+  "especie": "Cachorro",
+  "raca": "Golden Retriever",
+  "dataNascimento": "2020-05-10",
+  "tutorId": "27250c37-e255-49e6-96e2-df3d3c9a8c8a"
+}
