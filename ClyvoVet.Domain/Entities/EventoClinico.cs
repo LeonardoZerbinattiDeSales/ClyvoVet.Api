@@ -21,4 +21,12 @@ public class EventoClinico : BaseEntity
         DataEvento = dataEvento;
         PetId = petId;
     }
+
+    public void AtualizarDados(string tipo, string descricao, DateTime dataEvento, Guid petId)
+    {
+        Tipo = tipo;
+        Descricao = descricao;
+        DataEvento = dataEvento;
+        PetId = petId;
+    }
 }

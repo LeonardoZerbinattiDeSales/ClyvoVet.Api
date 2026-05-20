@@ -15,7 +15,7 @@ public class Pet : BaseEntity
     public Guid TutorId { get; private set; }
 
     public Tutor Tutor { get; private set; }
-    
+
     public ICollection<EventoClinico> EventosClinicos { get; private set; } = new List<EventoClinico>();
 
     public ICollection<Lembrete> Lembretes { get; private set; } = new List<Lembrete>();
@@ -27,5 +27,13 @@ public class Pet : BaseEntity
         Raca = raca;
         DataNascimento = dataNascimento;
         TutorId = tutorId;
+    }
+
+    public void AtualizarDados(string nome, string especie, string raca, DateTime dataNascimento)
+    {
+        Nome = nome;
+        Especie = especie;
+        Raca = raca;
+        DataNascimento = dataNascimento;
     }
 }

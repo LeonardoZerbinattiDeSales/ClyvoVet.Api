@@ -5,16 +5,29 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<ClyvoVetDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+var databaseProvider = builder.Configuration["DatabaseProvider"];
 
-builder.Services.AddOpenApi();
+builder.Services.AddDbContext<ClyvoVetDbContext>(options =>
+{
+    if (databaseProvider == "Oracle")
+    {
+        options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"));
+    }
+    else
+    {
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    }
+});
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
