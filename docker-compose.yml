@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+
+  api:
+    build: .
+    container_name: clyvovet-api
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      - oracle
+
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+
+    restart: always
+
+  oracle:
+    image: gvenzl/oracle-xe
+
+    container_name: oracle-db
+
+    ports:
+      - "1521:1521"
+
+    environment:
+      ORACLE_PASSWORD: oracle
+
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+
+    restart: always
+
+volumes:
+  oracle_data:
