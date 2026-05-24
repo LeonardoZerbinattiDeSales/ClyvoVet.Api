@@ -46,3 +46,5 @@ ClyvoVet
 ├── ClyvoVet.Application
 ├── ClyvoVet.Domain
 └── ClyvoVet.Infrastructure
+
+" Link video Devops: https://youtu.be/BINfIXSrKp8 "
