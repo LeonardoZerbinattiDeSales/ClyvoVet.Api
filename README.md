@@ -8,8 +8,7 @@ API RESTful desenvolvida em ASP.NET Core utilizando boas práticas de desenvolvi
 
 - Leonardo Zerbinatti de Sales RM: 562992 Turma: 2tdspj
 - Luis Guilherme Borges Silva RM: 566548 Turma: 2tdspj
-- Pedro Henrique Lacerda Ferraz RM: 563062 Turma: 2tdspj
-- 
+- Vinícius Luis Exposito Morassi Garcia RM: 563340 Turma: 2tdspj
 
 ---
 
